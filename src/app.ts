@@ -52,10 +52,7 @@ class App {
         };
         this.express.use('/api/docs', swaggerUi.serve,
             swaggerUi.setup(this.swaggerDocument, options, null));
-        this.express.use("/", (req, res, next) => {
-            res.send("Welcome to twine API")
-        })
-        // handle undefined routes
+
         this.express.use("*", (req, res, next) => {
             res.status(404).send("Endpoint not found!");
         });

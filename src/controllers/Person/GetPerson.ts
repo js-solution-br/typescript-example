@@ -7,7 +7,6 @@ class GetPerson {
         const { id } = req.params
 
         const person: IPerson = await new GetPersonService().handle(Number.parseInt(id))
-
         if (!person) {
             return res.json([])
         }
