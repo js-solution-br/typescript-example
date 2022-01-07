@@ -41,9 +41,8 @@ I know there are a lot of things in this API that could be better, like:
 - cofigure the DATABASE_URL with true infromation
 
 ##    It is also possible to use sqlite instead of mysql.
-   if you prefer using sqlite, go to primsa/schema.prisma and change the provider object to this:
+   if you prefer using sqlite, go to prisma/schema.prisma and change the provider object to this:
    ```
-
    datasource db {
      provider = "sqlite"
      url      = "file:./dev.db"
