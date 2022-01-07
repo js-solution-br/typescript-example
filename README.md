@@ -28,6 +28,7 @@ I know there are a lot of things in this API that could be better, like:
 1. Clone the repository
 2. create a ".env" file in your root directory an put "DATABASE_URL", "PORT", "SALT_KEY" as below
 3. cofigure the DATABASE_URL with true infromation
+   
     DATABASE_URL="mysql://user:password@host:port/database?schema=public"
     PORT=3333
     SALT_KEY=Qwedsazxc-cxzdsaewQ
