@@ -1,0 +1,5 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _createStarExport(obj) { Object.keys(obj) .filter((key) => key !== "default" && key !== "__esModule") .forEach((key) => { if (exports.hasOwnProperty(key)) { return; } Object.defineProperty(exports, key, {enumerable: true, get: () => obj[key]}); }); }var _CreatePersonService = require('./CreatePersonService'); _createStarExport(_CreatePersonService);
+var _DeletePersonService = require('./DeletePersonService'); _createStarExport(_DeletePersonService);
+var _GetPeopleService = require('./GetPeopleService'); _createStarExport(_GetPeopleService);
+var _GetPersonService = require('./GetPersonService'); _createStarExport(_GetPersonService);
+var _UpdatePersonService = require('./UpdatePersonService'); _createStarExport(_UpdatePersonService);

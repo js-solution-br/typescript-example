@@ -1,0 +1,5 @@
+export * from "./CreateMovie"
+export * from "./GetMovies"
+export * from "./GetMovie"
+export * from "./UpdateMovie"
+export * from "./DeleteMovie"

@@ -1,0 +1,5 @@
+export * from './CreateMovieService'
+export * from './GetMoviesService'
+export * from './GetMovieService'
+export * from './UpdateMovieService'
+export * from './DeleteMovieService'

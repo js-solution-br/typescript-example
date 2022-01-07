@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model person {
+  id                Int                  @id @default(autoincrement())
+  first_name        String
+  last_name         String
+  aliases           String
+  Movie_person_role role_for_the_movie[]
+}
+
+model movies {
+  id                Int                  @id @default(autoincrement())
+  title             String
+  release_year      Int
+  Movie_person_role role_for_the_movie[]
+}
+
+model roles {
+  id                Int                  @id
+  title             String
+  Movie_person_role role_for_the_movie[]
+}
+
+//Cadastrar os seeds das roles
+
+model role_for_the_movie {
+  id        Int    @id @default(autoincrement())
+  role_id   roles  @relation(fields: [rolesId], references: [id])
+  movie_id  movies @relation(fields: [moviesId], references: [id], onDelete: Cascade)
+  person_id person @relation(fields: [personId], references: [id], onDelete: Cascade)
+  rolesId   Int
+  moviesId  Int
+  personId  Int
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  username String @unique
+  password String
+}
