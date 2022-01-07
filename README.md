@@ -25,11 +25,11 @@ JWT is used to create users, generate token and authorize users to make POST, PU
 I tried to build this API using some SOLID principles so I have a class for every specific thing.
 I also divided the foldes into controllers and services, basically to separate the responsability of connecting to the database and treating the data.
 
-## Benefits os the structure
+## Benefits of the structure
 
 Using this structure (Application / Database) and the solid principles, I could make thinks like: allow you to create a new person while creating a movie (if you do not use an ID inside the body but pass the informations "first_name", "last_name" and "aliases", a new person should be created)
 
-## Things I could've made in a beeter way but I didn't have time because I had a lot of work at the other company
+## Things I could've made in a better way but I didn't have time because I had a lot of work at the other company
 I know there are a lot of things in this API that could be better, like:
 - Creating an Error handler class to handle some errors I know that could happen
 - Returning right HTTP CODES for every single requests
