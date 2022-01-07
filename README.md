@@ -39,15 +39,26 @@ I know there are a lot of things in this API that could be better, like:
 - Clone the repository
 - create a ".env" file in your root directory an put "DATABASE_URL", "PORT", "SALT_KEY" as below
 - cofigure the DATABASE_URL with true infromation
+
+##    It is also possible to use sqlite instead of mysql.
+   if you prefer using sqlite, go to prisma/schema.prisma and change the provider object to this:
+   ```
+   datasource db {
+     provider = "sqlite"
+     url      = "file:./dev.db"
+   }
+   ```
+
+
    ```
     DATABASE_URL="mysql://user:password@host:port/database?schema=public"
     PORT=3333
     SALT_KEY=Qwedsazxc-cxzdsaewQ
    ```
 
-    - use "npm install" to install the dependencies
-    - use "npm run config-prisma" to configure the database
-    - use "npm run dev" to run the project
+ - use "npm install" to install the dependencies
+ - use "npm run config-prisma" to configure the database
+ - use "npm run dev" to run the project
 
 - To make sure the API is running, make a request to "localhost:3333/roles".
 
