@@ -1,6 +1,6 @@
 declare interface IUser {
     id?: number,
-    username?: string,
+    username: string,
     email?: string,
     password?: string|undefined
     token?: any,

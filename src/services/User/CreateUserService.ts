@@ -8,8 +8,8 @@ class CreateUserService {
         const createdPerson = await prisma.user.create({
             data: {
                 username:user.username,
-                email:user.email,
-                password:user.password
+                email:user.email!,
+                password:user.password!
             }
         }).catch(error=>{
             console.log(error)

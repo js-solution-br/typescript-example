@@ -14,7 +14,7 @@ class CreateRelationship {
                                 await new CreateRelationShipService().handle(movieId, person.id, role)
                             });
                     } else {
-                        const person: IPerson = await new GetPersonService().handle(current.id)
+                        const person: any = await new GetPersonService().handle(current.id!)
                         if (!person && current.first_name) {
                             await new CreatePersonService().handle(current)
                                 .then(async (person) => {

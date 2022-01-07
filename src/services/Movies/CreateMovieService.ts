@@ -7,7 +7,7 @@ class CreateMovieService {
         const createdMovie = await prisma.movies.create({
             data: {
                 title: movie.title,
-                release_year: Number.parseInt(movie.release_year.toString())
+                release_year: Number.parseInt(movie.release_year!.toString())
             }
         })
 

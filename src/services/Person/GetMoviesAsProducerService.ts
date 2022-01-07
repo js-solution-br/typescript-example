@@ -7,7 +7,7 @@ import { GetRoleService } from "../Roles";
 const prisma = new PrismaClient();
 
 class GetMoviesAsProducerService {
-    async handle(personId): Promise<IMovie[]> {
+    async handle(personId:number): Promise<IMovie[]> {
         const relations = await prisma.role_for_the_movie.findMany({
             where: {
                 personId, rolesId: RolesCodes.PRODUCER

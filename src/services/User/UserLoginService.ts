@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class UserLoginService {
-    async handle(username: IUser) {
+    async handle(username: string) {
 
         const logged = await prisma.user.findUnique({
             where: {
