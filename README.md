@@ -1,5 +1,5 @@
 # Twine Movies API
-This project is a code challenge from twine where I should build an API for: movies / person
+This project is a code challenge from twine where I built an API for: movies / person
 
 ## Checklist
 
