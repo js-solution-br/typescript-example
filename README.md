@@ -50,3 +50,9 @@ I know there are a lot of things in this API that could be better, like:
 
 - To make sure the API is running, make a request to "localhost:3333/roles".
 
+The endpoints can be found [here](https://www.postman.com/samdev18/workspace/twine/overview).
+
+I recommend you to first use the "Create User" endpoint
+
+once you create you user, you will retrieve a token, you have to insert this token in the Authorization Bearer token header to make POST, PUT and DELETE requests. 
+
