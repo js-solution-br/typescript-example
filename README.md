@@ -17,6 +17,6 @@ observation: cofigure the DATABASE_URL with true infromation
     PORT=3333
     SALT_KEY=Qwedsazxc-cxzdsaewQ
 
-use "npm install" to install the dependencies
-use "npm run config-prisma" to configure the database
-use "npm run dev" to run the project
+    use "npm install" to install the dependencies
+    use "npm run config-prisma" to configure the database
+    use "npm run dev" to run the project
