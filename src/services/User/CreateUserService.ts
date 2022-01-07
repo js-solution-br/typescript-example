@@ -11,6 +11,9 @@ class CreateUserService {
                 email:user.email,
                 password:user.password
             }
+        }).catch(error=>{
+            console.log(error)
+            return error
         })
 
         return createdPerson
