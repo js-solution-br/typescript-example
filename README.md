@@ -10,12 +10,12 @@ Talking about the database, I decided to use a relational database because it is
 
 JWT is used to create users, generate token and authorize users to make POST, PUT and delete requests
 
-# Structure
+## Structure
 
 I tried to build this API using some SOLID principles so I have a class for every specific thing.
 I also divided the foldes into controllers and services, basically to separate the responsability of connecting to the database and treating the data.
 
-# Benefits os the structure
+## Benefits os the structure
 
 Using this structure (Application / Database) and the solid principles, I could make thinks like: allow you to create a new person while creating a movie (if you do not use an ID inside the body but pass the informations "first_name", "last_name" and "aliases", a new person should be created)
 
@@ -24,7 +24,7 @@ I know there are a lot of things in this API that could be better, like:
 1. Creating an Error handler class to handle some errors I know that could happen
 2. Returning right HTTP CODES for every single requests
 
-# How to use:
+## How to use:
 1. Clone the repository
 2. create a ".env" file in your root directory an put "DATABASE_URL", "PORT", "SALT_KEY" as below
 3. cofigure the DATABASE_URL with true infromation
