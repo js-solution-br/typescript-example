@@ -4,16 +4,9 @@ import { PrismaClient } from '@prisma/client'
 import personRouter from './routes/Person'
 import moviesRouter from './routes/Movies'
 import rolesRouter from './routes/Roles'
-import swaggerUi = require('swagger-ui-express');
-import fs = require('fs');
 class App {
 
     public express: express.Application
-
-    private swaggerFile: any = (process.cwd() + "/src/swagger.json");
-    private swaggerData: any = fs.readFileSync(this.swaggerFile, 'utf8');
-    private swaggerDocument = JSON.parse(this.swaggerData);
-    /* Swagger files end */
 
     constructor() {
         this.express = express()
@@ -44,17 +37,8 @@ class App {
         this.express.use(moviesRouter)
         this.express.use(rolesRouter)
 
-        // swagger docs
-        var options = {
-            swaggerOptions: {
-                authAction: { JWT: { name: "JWT", schema: { type: "apiKey", in: "header", name: "Authorization", description: "" }, value: "Bearer <JWT>" } }
-            }
-        };
-        this.express.use('/api/docs', swaggerUi.serve,
-            swaggerUi.setup(this.swaggerDocument, options, null));
-
         this.express.use("*", (req, res, next) => {
-            res.status(404).send("Endpoint not found!");
+            res.status(404).json({ error: "Endpoint not found!" });
         });
 
     }

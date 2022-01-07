@@ -11,9 +11,9 @@ personRouter.use('/person*', (req: Request, res: Response, next: NextFunction) =
     const protectedMethods = ["POST","PUT","DELETE"]
 
     if (protectedMethods.includes(req.method)) {
-        new AuthMiddleware().handle(req,res,next)
+        return new AuthMiddleware().handle(req,res,next)
     }
- 
+    next()
 })
 
     .post('/person', new CreatePerson().handle)

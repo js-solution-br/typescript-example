@@ -9,8 +9,9 @@ moviesRouter.use('/movies*', (req: Request, res: Response, next: NextFunction) =
     const protectedMethods = ["POST", "PUT", "DELETE"]
 
     if (protectedMethods.includes(req.method)) {
-        new AuthMiddleware().handle(req,res,next)
+        return new AuthMiddleware().handle(req,res,next)
     }
+    next()
 })
     .post('/movies', new CreateMovie().handle)
     .get('/movies', new GetMovies().handle)

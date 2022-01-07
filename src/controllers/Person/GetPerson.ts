@@ -5,7 +5,7 @@ import { GetPersonService } from '../../services/Person/GetPersonService'
 class GetPerson {
     async handle(req: Request, res: Response): Promise<any> {
         const { id } = req.params
-
+        console.log(id)
         const person: IPerson = await new GetPersonService().handle(Number.parseInt(id))
         if (!person) {
             return res.json([])

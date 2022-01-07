@@ -9,7 +9,9 @@ class UpdatePerson {
 
         const personToUpdate: IPerson = { first_name, last_name, aliases }
 
-        const people = await new UpdatePersonService().handle(Number.parseInt(id), personToUpdate);
+        const people = await new UpdatePersonService().handle(Number.parseInt(id), personToUpdate).catch(err => {
+            return res.json({error: err})
+        });
 
         return res.json(people)
     }

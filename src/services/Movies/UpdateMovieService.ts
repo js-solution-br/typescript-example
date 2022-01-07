@@ -10,6 +10,8 @@ class UpdateMovieService {
                 title: movie.title,
                 release_year: movie.release_year
             }
+        }).catch(err=>{
+            throw new Error("Invalid ID")
         })
 
         return createdMovie
