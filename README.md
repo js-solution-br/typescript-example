@@ -20,6 +20,7 @@ Talking about the database, I decided to use a relational database because it is
 
 JWT is used to create users, generate token and authorize users to make POST, PUT and delete requests
 
+I have used bcrypt to hash the password when creating a new user and decode the password 
 ## Structure
 
 I tried to build this API using some SOLID principles so I have a class for every specific thing.
@@ -44,9 +45,9 @@ I know there are a lot of things in this API that could be better, like:
     SALT_KEY=Qwedsazxc-cxzdsaewQ
    ```
 
-    use "npm install" to install the dependencies
-    use "npm run config-prisma" to configure the database
-    use "npm run dev" to run the project
+    - use "npm install" to install the dependencies
+    - use "npm run config-prisma" to configure the database
+    - use "npm run dev" to run the project
 
 - To make sure the API is running, make a request to "localhost:3333/roles".
 
