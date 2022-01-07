@@ -57,9 +57,9 @@ I know there are a lot of things in this API that could be better, like:
     SALT_KEY=Qwedsazxc-cxzdsaewQ
    ```
 
-    - use "npm install" to install the dependencies
-    - use "npm run config-prisma" to configure the database
-    - use "npm run dev" to run the project
+ - use "npm install" to install the dependencies
+ - use "npm run config-prisma" to configure the database
+ - use "npm run dev" to run the project
 
 - To make sure the API is running, make a request to "localhost:3333/roles".
 
