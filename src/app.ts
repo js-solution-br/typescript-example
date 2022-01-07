@@ -39,22 +39,22 @@ class App {
     }
 
     private routes(): void {
-        this.express.use("/", (req, res, next)=>{
-            res.send("Welcome to twine API")
-        })
+
         this.express.use(personRouter)
         this.express.use(moviesRouter)
         this.express.use(rolesRouter)
-        
+
         // swagger docs
         var options = {
             swaggerOptions: {
-              authAction :{ JWT: {name: "JWT", schema: {type: "apiKey", in: "header", name: "Authorization", description: ""}, value: "Bearer <JWT>"} }
+                authAction: { JWT: { name: "JWT", schema: { type: "apiKey", in: "header", name: "Authorization", description: "" }, value: "Bearer <JWT>" } }
             }
-          };
+        };
         this.express.use('/api/docs', swaggerUi.serve,
             swaggerUi.setup(this.swaggerDocument, options, null));
-
+        this.express.use("/", (req, res, next) => {
+            res.send("Welcome to twine API")
+        })
         // handle undefined routes
         this.express.use("*", (req, res, next) => {
             res.status(404).send("Endpoint not found!");
