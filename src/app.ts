@@ -11,7 +11,7 @@ class App {
     public express: express.Application
 
     constructor() {
-        dotenv.config({ path: '../.env' });
+        dotenv.config({ path: '.env' });
         this.express = express()
         this.database()
         this.middlewares()
