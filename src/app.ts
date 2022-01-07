@@ -39,6 +39,9 @@ class App {
     }
 
     private routes(): void {
+        this.express.use("/", (req, res, next)=>{
+            res.send("Welcome to twine API")
+        })
         this.express.use(personRouter)
         this.express.use(moviesRouter)
         this.express.use(rolesRouter)
