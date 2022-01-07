@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+    "build": "npx prisma migrate --name init & npx prisma db seed & sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
