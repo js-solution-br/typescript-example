@@ -9,7 +9,7 @@ class UpdateMovie {
         try {
             const { id } = req.params
 
-            const { title, release_year, casting, directors, producers } = req.body
+            const { title, release_year } = req.body
 
             const movieToUpdate: IMovie = { title, release_year }
 
@@ -17,8 +17,6 @@ class UpdateMovie {
                 title: movieTitle,
                 release_year: movie_releaseYear
             } = await new UpdateMovieService().handle(Number.parseInt(id), movieToUpdate)
-
-            await new CreateRelationship().handle({ movieId, casting, directors, producers })
 
             return res.status(200).json([{ message: "Movie updated successfully" }, {
                 id: movieId,

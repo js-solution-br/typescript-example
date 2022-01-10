@@ -11,6 +11,8 @@ class GetPersonFromRoleService {
                 moviesId, rolesId: roleId
             }
         });
+
+
         const casting: IPerson[] = [];
 
         for (const currentRelation of relations) {
@@ -20,7 +22,7 @@ class GetPersonFromRoleService {
             person.role = role.title
             casting.push(person)
         }
-
+    
         return casting
     }
 }

@@ -15,7 +15,7 @@ class GetMovieCastingService {
             }
 
             const casting = await new GetPersonFromRoleService().handle(movies!.id, RolesCodes.ACTOR_ACTRESS)
-
+           
             return casting
         } catch (error: any) {
             throw new Error("Internal Error.")

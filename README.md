@@ -5,6 +5,8 @@ this project needs to run in localhost
 
 The endpoints can be found [here](https://www.postman.com/samdev18/workspace/twine/overview).
 
+When running on postman, you have to set up your environment to localhost(maybe it doesn't work on web browser so you would need to download the collections and run on your computer)
+
 Node version: 14.0.0
 ## Checklist
 

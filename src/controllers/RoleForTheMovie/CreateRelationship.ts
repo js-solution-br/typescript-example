@@ -6,9 +6,9 @@ import { CreateRelationShipService } from "../../services/RolesForMovies";
 class CreateRelationship {
     async handle(data: IRelationship): Promise<void> {
         try {
-            await this.createRelationshipForRole(data.movieId, data.casting, RolesCodes.ACTOR_ACTRESS)
-            await this.createRelationshipForRole(data.movieId, data.directors, RolesCodes.DIRECTOR)
-            await this.createRelationshipForRole(data.movieId, data.producers, RolesCodes.PRODUCER)
+            await this.createRelationshipForRole(data.movieId, data?.casting!, RolesCodes.ACTOR_ACTRESS)
+            await this.createRelationshipForRole(data.movieId, data?.directors!, RolesCodes.DIRECTOR)
+            await this.createRelationshipForRole(data.movieId, data?.producers!, RolesCodes.PRODUCER)
         } catch (error: any) {
             throw new Error("Error while creating Relation between movie and person")
         }
