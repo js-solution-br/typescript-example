@@ -4,7 +4,7 @@ import { salt_key } from '../../constants';
 
 class Authorize {
     async handle(token:string) {
-        await jwt.verify(token, salt_key, (error, decoded) => {
+        await jwt.verify(token, salt_key!, (error, decoded) => {
             if (error) {
                 return false
             }
