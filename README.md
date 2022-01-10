@@ -58,11 +58,13 @@ The code gets easier to maintain once you have interfaces to declare the exact t
     SALT_KEY=Qwedsazxc-cxzdsaewQ
    ```
 
+   ```
  - use "npm install" to install the dependencies
  - use "npm run config-prisma" to configure the database
  - use "npm run dev" to run the project
-
+   ```
 - To make sure the API is running, make a request to "localhost:3333/roles".
+
 
 The endpoints can be found [here](https://www.postman.com/samdev18/workspace/twine/overview).
 
