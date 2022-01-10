@@ -8,30 +8,23 @@ const prisma = new PrismaClient();
 class GetMovieService {
     async handle(id: number): Promise<any> {
         try {
-            const movies = [await prisma.movies.findUnique({ where: { id } })];
+            const movies: IMovie | any = await prisma.movies.findUnique({ where: { id } });
 
-            if (!movies[0]) {
+            if (!movies) {
                 return []
             }
 
-            const moviesArray = []
+            const casting = await new GetPersonFromRoleService().handle(movies!.id, RolesCodes.ACTOR_ACTRESS)
+            const directors = await new GetPersonFromRoleService().handle(movies!.id, RolesCodes.DIRECTOR)
+            const producers = await new GetPersonFromRoleService().handle(movies!.id, RolesCodes.PRODUCER)
+            const release_year = new Helpers().decimalToRoman(movies!.release_year)
+            
+            movies.release_year = release_year
+            movies.casting = casting
+            movies.directors = directors
+            movies.producers = producers
 
-            for (let movie in movies) {
-                const casting = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.ACTOR_ACTRESS)
-                const directors = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.DIRECTOR)
-                const producers = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.PRODUCER)
-                const release_year = new Helpers().decimalToRoman(movies[movie]!.release_year)
-
-                moviesArray.push({
-                    ...movies[movie],
-                    release_year,
-
-                    casting,
-                    directors,
-                    producers,
-                })
-            }
-            return moviesArray[0]
+            return movies
         } catch (error: any) {
             throw new Error("Internal Error.")
         }
