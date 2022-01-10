@@ -9,13 +9,13 @@ class DeleteMovie {
             await new DeleteMovieService().handle(Number.parseInt(id))
 
         } catch (error: any) {
-            return res.json({
+            return res.status(500).json({
                 error: {
                     message: error.message
                 }
             })
         }
-        return res.json({ message: "Movie deleted successfully" })
+        return res.status(200).json({ message: "Movie deleted successfully" })
     }
 }
 export { DeleteMovie }

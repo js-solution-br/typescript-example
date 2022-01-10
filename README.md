@@ -1,6 +1,11 @@
 # Twine Movies API
 This project is a code challenge from twine where I built an API for: movies / person
 
+this project needs to run in localhost
+
+The endpoints can be found [here](https://www.postman.com/samdev18/workspace/twine/overview).
+
+Node version: 14.0.0
 ## Checklist
 
 - [x] Create an API using nodeJS, typescript and express
@@ -28,19 +33,16 @@ I also divided the foldes into controllers and services, basically to separate t
 
 ## Benefits of the structure
 
-Using this structure (Application / Database) and the solid principles, I could make thinks like: allow you to create a new person while creating a movie (if you do not use an ID inside the body but pass the informations "first_name", "last_name" and "aliases", a new person should be created)
+Using this structure (Application / Database) and the solid principles, I could make things like: allow you to create a new person while creating a movie (if you do not use an ID inside the body but pass the informations "first_name", "last_name" and "aliases", a new person should be created)
 
-## Things I could've made in a better way but I didn't have time because I had a lot of work at the other company
-I know there are a lot of things in this API that could be better, like:
-- Creating an Error handler class to handle some errors I know that could happen
-- Returning right HTTP CODES for every single requests
+The code gets easier to maintain once you have interfaces to declare the exact type you expect to receive in a object and you also have return types for each function so it is easier to understando the code and it is also easier to know what the system expects from the data.
 
 ## How to use:
 - Clone the repository
 - create a ".env" file in your root directory an put "DATABASE_URL", "PORT", "SALT_KEY" as below
 - cofigure the DATABASE_URL with true infromation
 
-##    It is also possible to use sqlite instead of mysql.
+##    It is also possible to use sqlite instead of mysql (recommended in localhost if you want to save some time).
    if you prefer using sqlite, go to prisma/schema.prisma and change the provider object to this:
    ```
    datasource db {

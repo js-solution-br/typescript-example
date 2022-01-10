@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { RolesCodes } from "../../constants";
-import { Shared } from "../../shared";
+import { Helpers } from "../../helpers";
 import { GetPersonFromRoleService } from "../RolesForMovies";
 
 const prisma = new PrismaClient();
@@ -19,7 +19,7 @@ class GetMovieService {
             const casting = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.ACTOR_ACTRESS)
             const directors = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.DIRECTOR)
             const producers = await new GetPersonFromRoleService().handle(movies[movie]!.id, RolesCodes.PRODUCER)
-            const release_year = new Shared().decimalToRoman(movies[movie]!.release_year)
+            const release_year = new Helpers().decimalToRoman(movies[movie]!.release_year)
 
             moviesArray.push({
                 ...movies[movie],

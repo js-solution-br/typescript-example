@@ -18,7 +18,7 @@ class CreateMovie {
         await new CreateRelationship().handle(movieId, RolesCodes.DIRECTOR, directors)
         await new CreateRelationship().handle(movieId, RolesCodes.PRODUCER, producers)
 
-        return res.json([{ message: "Movie created successfully" }, {
+        return res.status(200).json([{ message: "Movie created successfully" }, {
             id: movieId,
             title: movieTitle,
             release_year: movie_releaseYear

@@ -6,7 +6,7 @@ class GetMovies {
     async handle(req: Request, res: Response): Promise<Response> {
         const people = await new GetMoviesService().handle();
         
-        return res.json(people);
+        return res.status(200).json(people);
     }
 }
 export { GetMovies }

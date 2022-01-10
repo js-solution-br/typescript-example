@@ -8,7 +8,7 @@ class GetMovie {
 
         const movie = await new GetMovieService().handle(Number.parseInt(id));
 
-        return res.json(movie ?? []);
+        return res.status(200).json(movie ?? []);
     }
 }
 export { GetMovie }
