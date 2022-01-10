@@ -3,10 +3,12 @@ import { Request, Response } from 'express'
 import { GetMovieService } from '../../services/Movies';
 
 class GetMovie {
-    async handle(req: Request, res: Response) {
+    async handle(req: Request, res: Response): Promise<Response> {
         const { id } = req.params
-        const movies = await new GetMovieService().handle(Number.parseInt(id));
-        return res.json(movies?? []);
+
+        const movie = await new GetMovieService().handle(Number.parseInt(id));
+
+        return res.json(movie ?? []);
     }
 }
 export { GetMovie }

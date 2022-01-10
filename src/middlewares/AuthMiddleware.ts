@@ -1,8 +1,9 @@
+import { NextFunction, Request, Response } from "express"
 import { DecodeToken } from "../controllers/Authentication/DecodeToken"
 const createError = require('http-errors')
 
 class AuthMiddleware {
-    async handle(req, res, next) {
+    async handle(req: Request | any, res: Response, next: NextFunction) {
         if (!req.headers.authorization) {
             return res.status(403).json({ error: 'Access token is required' })
         }

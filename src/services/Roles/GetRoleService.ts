@@ -4,8 +4,8 @@ import { GetPersonService } from "../Person/GetPersonService";
 const prisma = new PrismaClient();
 
 class GetRoleService {
-    async handle(roleId: number): Promise<IRole> {
-        const role = await prisma.roles.findUnique({
+    async handle(roleId: number): Promise<IRole | any> {
+        const role: IRole | any = await prisma.roles.findUnique({
             where: {
                 id: roleId
             }

@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 class GetAllRolesService {
     async handle(): Promise<IRole[]> {
-        const role = await prisma.roles.findMany()
+        const role: IRole[] = await prisma.roles.findMany()
 
         return role
     }
