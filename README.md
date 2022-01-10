@@ -1,11 +1,9 @@
 # Twine Movies API
 This project is a code challenge from twine where I built an API for: movies / person
 
-this project needs to run in localhost
-
 The endpoints can be found [here](https://www.postman.com/samdev18/workspace/twine/overview).
 
-When running on postman, you have to set up your environment to localhost(maybe it doesn't work on web browser so you would need to download the collections and run on your computer)
+When running on postman, you have to set up your to amazon if you want to use the online environment, if you want to test the application running on your machine, use the localhost environment.
 
 Node version: 14.0.0
 ## Checklist
