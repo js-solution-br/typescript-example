@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 class CreateUserService {
     async handle(user: IUser): Promise<IUser> {
-        if (!user.username || !user.email || user.password) {
+        if (!user.username || !user.email || !user.password) {
             throw new Error("Invalid data provided")
         }
 

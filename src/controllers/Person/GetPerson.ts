@@ -16,7 +16,7 @@ class GetPerson {
         person.movies_as_director = await new GetMoviesAsDirectorService().handle(Number.parseInt(id));
         person.movies_as_producer = await new GetMoviesAsProducerService().handle(Number.parseInt(id));
 
-        return res.json(person)
+        return res.status(200).json(person)
     }
 }
 export { GetPerson }

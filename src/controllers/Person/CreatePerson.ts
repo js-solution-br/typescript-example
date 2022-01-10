@@ -9,9 +9,9 @@ class CreatePerson {
         try {
             const create = await new CreatePersonService().handle(personToCreate)
 
-            return res.json(create);
+            return res.status(200).json(create);
         } catch (error: any) {
-            return res.json({
+            return res.status(500).json({
                 error: {
                     message: error.message
                 }
